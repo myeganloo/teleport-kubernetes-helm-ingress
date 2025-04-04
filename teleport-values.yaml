@@ -1,0 +1,45 @@
+clusterName: "teleport.example.com"
+chartMode: "standalone"
+highAvailability:
+  replicaCount: 3
+  podDisruptionBudget:
+    enabled: true
+    minAvailable: 2
+  certManager:
+    enabled: true
+    issuerName: "letsencrypt-prod" #---> Check this value
+    addCommonName: true
+    addPublicAddrs: true
+service:
+  type: ClusterIP
+  annotations:
+    prometheus.io/scrape: "true"
+proxy:
+  enabled: true
+  publicAddr: "teleport.example.com:443"
+  sshPublicAddr: "teleport.example.com:443"
+  kube:
+    enabled: true
+    publicAddr: "teleport.example.com:443"
+proxyListenerMode: "multiplex"
+podSecurityPolicy:
+  enabled: false
+securityContext:
+  runAsUser: 1000
+  runAsGroup: 1000
+  fsGroup: 1000
+  runAsNonRoot: true
+resources:
+  requests:
+    cpu: "200m"
+    memory: "256Mi"
+  limits:
+    cpu: "1000m"
+    memory: "1024Mi"
+sessionRecording: "node"
+storage:
+  enabled: true
+  storageClassName: "local-path"
+log:
+  level: "INFO"
+namespaceOverride: "teleport-cluster"
