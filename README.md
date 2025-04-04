@@ -46,4 +46,10 @@ tsh login --proxy=<your-clustername>:443 --auth=local --user=<your-username>
 you can use this [link](https://goteleport.com/docs/connect-your-client/tsh/#installing-tsh) to install tsh 
 
 ### 5. Add Your Resource 
+Register resources (e.g., SSH nodes, Kubernetes clusters) with Teleport:
+
+SSH Node Example: Install the Teleport agent on a target server and join it to the cluster (see Teleport Docs)[https://goteleport.com/docs/setup/guides/joining-nodes/].
+Kubernetes Cluster: Already enabled via proxy.kube.enabled. Use tsh kube login to access
 ;-) Good Luck
+##HAProxy Configuration
+Ensure HAProxy forwards traffic to your nodes
