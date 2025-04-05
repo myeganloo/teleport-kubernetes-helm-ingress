@@ -79,7 +79,9 @@ Register resources (e.g., SSH nodes, Kubernetes clusters) with Teleport:
 SSH Node Example: Install the Teleport agent on a target server and join it to the cluster [see Teleport Docs](https://goteleport.com/docs/setup/guides/joining-nodes/).
 Kubernetes Cluster: Already enabled via proxy.kube.enabled. Use tsh kube login to access
 ;-) Good Luck
-##HAProxy Configuration
+
+
+### HAProxy Configuration
 Ensure HAProxy forwards traffic to your nodes
 
 # 🔗 Links
