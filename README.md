@@ -46,7 +46,7 @@ Flow: `Client → HAProxy (443) → Ingress Nginx (32443) → Teleport (3080 int
 - HAProxy configured (see `haproxy.cfg` below).
 - Ingress Nginx deployed with NodePorts 32080 (HTTP) and 32443 (HTTPS).
 - Cert-Manager installed with a `ClusterIssuer` (e.g., `letsencrypt-prod`).
-- Domain (e.g., `tele.kube.yeganloo.com`) pointing to HAProxy’s IP (e.g., 185.105.184.251).
+- Domain (e.g., `kube.yeganloo.com`) pointing to HAProxy’s IP (e.g., 185.195.154.250).
 
 ## Installation
 
